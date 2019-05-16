@@ -9,12 +9,13 @@ public class HttpScrappingPattern implements HttpScrappingMatcher {
 
     private String name;
     private Pattern regex;
-    private AbstractMatchingGroup matchingGroup;
+    private MatchingGroupImpl matchingGroup;
 
 
-    protected HttpScrappingPattern(String name,Pattern regex){
+    protected HttpScrappingPattern(String name,Pattern regex, MatchingGroupImpl matchingGroup){
         this.name = name;
         this.regex = regex;
+        this.matchingGroup = matchingGroup;
     }
 
     @Override
@@ -22,7 +23,7 @@ public class HttpScrappingPattern implements HttpScrappingMatcher {
         List<String> results = new ArrayList<>();
         final Matcher matcher = regex.matcher(txt);
         matcher.matches();
-        if(matcher.find()){
+        while (matcher.find()){
             this.matchingGroup.match(matcher,results);
         }
         return results;

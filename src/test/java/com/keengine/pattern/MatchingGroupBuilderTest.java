@@ -9,13 +9,13 @@ import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
-public class MatchingIndexGroupBuilderTest {
+public class MatchingGroupBuilderTest {
 
     @Test
     public void TestMatchingGroupBuilder() {
-        final MatchingIndexGroupBuilder matchingIndexGroupBuilder = new MatchingIndexGroupBuilder().
+        final MatchingGroupBuilder matchingGroupBuilder = new MatchingGroupBuilder().
                 withGroupIndex(0).withNext().withGroupIndex(1).withNext().withGroupIndex(2);
-        final MatchingAbstractGroupImpl matchingGroup = matchingIndexGroupBuilder.build();
+        final MatchingGroupImpl matchingGroup = matchingGroupBuilder.build();
         final Pattern compile = Pattern.compile("([a-zA-Z0-9]+)([\\s]+)([a-zA-Z ]+)([\\s]+)([0-9]+)");
         List<String> results = new ArrayList<>();
         Matcher matcher = compile.matcher("!* UserName10 John Smith 01123 *!");
