@@ -1,7 +1,7 @@
 language: java
 install: true
 script:
-  - ./mvn clean install
+  - ./mvnw clean jacoco:prepare-agent install jacoco:report
   - bash <(curl -s https://codecov.io/bash)
 
 cache:

@@ -3,6 +3,7 @@ package com.keengine.pattern;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
@@ -17,11 +18,10 @@ public class HttpScrappingPatternBuilderTest {
         final HttpScrappingPatternBuilder httpScrappingPatternBuilder = new HttpScrappingPatternBuilder();
         httpScrappingPatternBuilder.withMatchingGroupBuilder(matchingGroupBuilder)
                 .withName("Random Regex")
-                .withRegex("([a-zA-Z0-9]+)([\\s]+)([a-zA-Z ]+)([\\s]+)([0-9]+)");
+                .withRegex("^a\u030A$");
         final HttpScrappingPattern scrappingPattern = httpScrappingPatternBuilder.build();
-        final List<String> results = scrappingPattern.match("!* UserName10 John Smith 01123 *!\n" +
-                "!* UserName10 John Smith 01123 *!");
-        assertEquals(3, results.size());
+        final List<String> results = scrappingPattern.match("\u00E5");
+        assertEquals(0, results.size());
     }
 
     @Test
@@ -31,12 +31,11 @@ public class HttpScrappingPatternBuilderTest {
         final HttpScrappingPatternBuilder httpScrappingPatternBuilder = new HttpScrappingPatternBuilder();
         httpScrappingPatternBuilder.withMatchingGroupBuilder(matchingGroupBuilder)
                 .withName("Random Regex")
-                .withRegex("([a-zA-Z0-9]+)([\\s]+)([a-zA-Z ]+)([\\s]+)([0-9]+)")
-                .withPatternFlag(8);
+                .withRegex("^a\u030A$")
+                .withPatternFlag(Pattern.CANON_EQ);
         final HttpScrappingPattern scrappingPattern = httpScrappingPatternBuilder.build();
-        final List<String> results = scrappingPattern.match("!* UserName10 John Smith 01123 *!\n" +
-                "!* UserName10 John Smith 01123 *!");
-        assertEquals(6, results.size());
+        final List<String> results = scrappingPattern.match("\u00E5");
+        assertEquals(1, results.size());
     }
 
     @Test

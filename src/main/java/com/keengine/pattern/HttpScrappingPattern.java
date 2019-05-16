@@ -22,7 +22,6 @@ public class HttpScrappingPattern implements HttpScrappingMatcher {
     public List<String> match(String txt){
         List<String> results = new ArrayList<>();
         final Matcher matcher = regex.matcher(txt);
-        matcher.matches();
         while (matcher.find()){
             this.matchingGroup.match(matcher,results);
         }
