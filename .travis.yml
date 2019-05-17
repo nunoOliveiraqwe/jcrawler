@@ -1,8 +1,10 @@
 language: java
 install: true
 script:
-  - ./mvnw clean jacoco:prepare-agent install jacoco:report
-  - bash <(curl -s https://codecov.io/bash)
+  - mvn clean jacoco:prepare-agent install jacoco:report
+
+after_success:
+  - codecov
 
 cache:
   directories:
