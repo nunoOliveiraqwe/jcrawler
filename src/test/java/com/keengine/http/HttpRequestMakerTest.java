@@ -11,8 +11,7 @@ public class HttpRequestMakerTest {
 
     @Test
     public void TestTorGet() {
-        System.out.println("TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
-        Assume.assumeTrue("Travis CI build ignoring test",!"TRUE".equals(System.getenv("TRAVIS")));
+        Assume.assumeFalse("Travis CI build ignoring test","TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
         final TorHttpGet httpRequest = new TorHttpGet();
         assertNotNull(httpRequest);
         try {
@@ -28,8 +27,7 @@ public class HttpRequestMakerTest {
 
     @Test
     public void TestApacheGet(){
-        System.out.println("TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
-        Assume.assumeTrue("Travis CI build ignoring test",!"TRUE".equals(System.getenv("TRAVIS")));
+        Assume.assumeFalse("Travis CI build ignoring test","TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
         final SimpleHttpGet httpRequest = new SimpleHttpGet();
         assertNotNull(httpRequest);
         try {
@@ -45,8 +43,7 @@ public class HttpRequestMakerTest {
 
     @Test
     public void TestGetByInterface(){
-        System.out.println("TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
-        Assume.assumeTrue("Travis CI build ignoring test",!"TRUE".equals(System.getenv("TRAVIS")));
+        Assume.assumeFalse("Travis CI build ignoring test","TRUE".equalsIgnoreCase(System.getenv("TRAVIS")));
         final HttpRequestInterface httpRequestInterface = HttpRequestMaker.GetInterface();
         assertNotNull(httpRequestInterface);
         try {
