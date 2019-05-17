@@ -4,7 +4,7 @@ script:
   - mvn clean jacoco:prepare-agent install jacoco:report
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:
