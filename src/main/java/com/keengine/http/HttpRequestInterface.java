@@ -4,6 +4,6 @@ import java.io.IOException;
 
 public interface HttpRequestInterface {
 
-    byte[] getUrl(String... args) throws Exception;
+    byte[] getUrl(MarkerParameters parameters) throws Exception;
 
 }
