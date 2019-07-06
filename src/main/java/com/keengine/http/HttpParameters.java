@@ -1,6 +1,8 @@
 package com.keengine.http;
 
-public interface MarkerParameters {
+
+
+public interface HttpParameters {
 
 
     int getPort();

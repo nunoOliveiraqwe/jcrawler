@@ -1,7 +1,7 @@
 package com.keengine.http.Simple;
 
 import com.keengine.http.HttpRequestInterface;
-import com.keengine.http.MarkerParameters;
+import com.keengine.http.HttpParameters;
 import com.keengine.http.StreamReader;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,7 +14,7 @@ public class SimpleHttpGet implements HttpRequestInterface,StreamReader {
 
 
     @Override
-    public byte[] getUrl(MarkerParameters parameters) throws Exception {
+    public byte[] getUrl(HttpParameters parameters) throws Exception {
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(parameters.getUrl());
         request.addHeader("User-Agent",parameters.getUserAgent());

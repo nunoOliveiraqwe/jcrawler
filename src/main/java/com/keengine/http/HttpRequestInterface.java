@@ -1,9 +1,12 @@
 package com.keengine.http;
 
-import java.io.IOException;
+import java.util.logging.Logger;
 
 public interface HttpRequestInterface {
 
-    byte[] getUrl(MarkerParameters parameters) throws Exception;
+
+    Logger LOGGER = Logger.getLogger("HttpRequestInterface");
+
+    byte[] getUrl(HttpParameters parameters) throws Exception;
 
 }

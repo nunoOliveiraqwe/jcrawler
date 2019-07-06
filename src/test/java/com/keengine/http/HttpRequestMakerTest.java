@@ -15,7 +15,27 @@ public class HttpRequestMakerTest {
         final TorHttpGet httpRequest = new TorHttpGet();
         assertNotNull(httpRequest);
         try {
-            byte[] arr = httpRequest.getUrl("http://google.pt","localhost","9050");
+            byte[] arr = httpRequest.getUrl(new HttpParameters() {
+                @Override
+                public int getPort() {
+                    return 9050;
+                }
+
+                @Override
+                public String getUrl() {
+                    return "http://google.pt";
+                }
+
+                @Override
+                public String getTorServiceIp() {
+                    return "localhost";
+                }
+
+                @Override
+                public String getUserAgent() {
+                    return null;
+                }
+            });
 
             assertTrue(arr.length>0);
             String response = new String(arr);
@@ -31,7 +51,27 @@ public class HttpRequestMakerTest {
         final SimpleHttpGet httpRequest = new SimpleHttpGet();
         assertNotNull(httpRequest);
         try {
-            byte[] arr = httpRequest.getUrl("http://google.pt","Keengine Crawler");
+            byte[] arr = httpRequest.getUrl(new HttpParameters() {
+                @Override
+                public int getPort() {
+                    return 0;
+                }
+
+                @Override
+                public String getUrl() {
+                    return "http://google.pt";
+                }
+
+                @Override
+                public String getTorServiceIp() {
+                    return null;
+                }
+
+                @Override
+                public String getUserAgent() {
+                    return "jCrawler";
+                }
+            });
             assertTrue(arr.length>0);
             String response = new String(arr);
             assertTrue(!response.isEmpty());
@@ -47,7 +87,27 @@ public class HttpRequestMakerTest {
         final HttpRequestInterface httpRequestInterface = HttpRequestMaker.GetInterface();
         assertNotNull(httpRequestInterface);
         try {
-            byte[] arr = httpRequestInterface.getUrl("http://google.pt","localhost","9050");
+            byte[] arr = httpRequestInterface.getUrl(new HttpParameters() {
+                @Override
+                public int getPort() {
+                    return 9050;
+                }
+
+                @Override
+                public String getUrl() {
+                    return "http://google.pt";
+                }
+
+                @Override
+                public String getTorServiceIp() {
+                    return "localhost";
+                }
+
+                @Override
+                public String getUserAgent() {
+                    return null;
+                }
+            });
             assertTrue(arr.length>0);
             String response = new String(arr);
             assertTrue(!response.isEmpty());
