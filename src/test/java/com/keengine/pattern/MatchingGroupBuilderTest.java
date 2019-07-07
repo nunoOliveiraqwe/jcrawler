@@ -1,5 +1,7 @@
 package com.keengine.pattern;
 
+import com.keengine.pattern.matcher.MatchingGroupBuilder;
+import com.keengine.pattern.matcher.MatchingGroupImpl;
 import org.junit.Test;
 
 import java.util.ArrayList;

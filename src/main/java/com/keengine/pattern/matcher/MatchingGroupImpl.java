@@ -1,12 +1,13 @@
-package com.keengine.pattern;
+package com.keengine.pattern.matcher;
 
 
+
+import com.keengine.pattern.scrapping.ScrappingInterface;
 
 import java.util.List;
 import java.util.regex.Matcher;
 
 public class MatchingGroupImpl {
-
 
     private MatchingGroupImpl next;
     private int groupIndex;
@@ -17,12 +18,13 @@ public class MatchingGroupImpl {
     }
 
 
-    protected void match(Matcher matcher, List<String> matchList) {
+    public void match(ScrappingInterface scrapper, Matcher matcher, List<Match> matchList) {
         if (this.groupIndex>= 0 &&this.groupIndex < matcher.end()) {
-            matchList.add(matcher.group(this.groupIndex));
+            String match = matcher.group(this.groupIndex);
+            matchList.add(new Match(match,this.groupIndex,scrapper.getName()));
         }
         if(this.next != null)
-            this.next.match(matcher,matchList);
+            this.next.match(scrapper,matcher,matchList);
     }
 
 }

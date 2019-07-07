@@ -1,4 +1,4 @@
-package com.keengine.provider.exception;
+package com.keengine.reader.exception;
 
 public class ProviderNotFoundException extends Throwable {
 
