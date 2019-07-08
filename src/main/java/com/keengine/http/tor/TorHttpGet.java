@@ -1,4 +1,4 @@
-package com.keengine.http.TorProxy;
+package com.keengine.http.tor;
 
 import com.keengine.http.HttpRequestInterface;
 import com.keengine.http.HttpParameters;
@@ -12,6 +12,12 @@ import java.net.SocketAddress;
 import java.net.URL;
 import java.util.logging.Level;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 public class TorHttpGet implements HttpRequestInterface, StreamReader {
 
     @Override

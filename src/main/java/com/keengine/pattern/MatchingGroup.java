@@ -6,6 +6,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.regex.Matcher;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 class MatchingGroup {
 
     private MatchingGroup next;

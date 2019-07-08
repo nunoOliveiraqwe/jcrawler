@@ -7,6 +7,12 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 public class HttpProperties {
 
 

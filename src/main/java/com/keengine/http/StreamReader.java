@@ -4,6 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 public interface StreamReader {
 
 

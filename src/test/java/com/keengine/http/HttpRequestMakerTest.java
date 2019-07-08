@@ -1,7 +1,7 @@
 package com.keengine.http;
 
-import com.keengine.http.Simple.SimpleHttpGet;
-import com.keengine.http.TorProxy.TorHttpGet;
+import com.keengine.http.simple.SimpleHttpGet;
+import com.keengine.http.tor.TorHttpGet;
 import org.junit.Assume;
 import org.junit.Test;
 

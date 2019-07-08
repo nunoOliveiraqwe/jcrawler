@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 class ScrappingPattern implements ScrappingInterface {
 
     private String name;

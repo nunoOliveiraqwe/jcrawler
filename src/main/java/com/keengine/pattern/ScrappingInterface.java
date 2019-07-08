@@ -1,9 +1,14 @@
 package com.keengine.pattern;
 
-import com.keengine.pattern.Match;
 
 import java.util.List;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 interface ScrappingInterface {
 
 

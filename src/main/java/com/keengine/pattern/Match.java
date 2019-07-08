@@ -6,6 +6,13 @@ import com.keengine.framework.dto.DTOable;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
+
 public class Match implements DTOable {
 
 

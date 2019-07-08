@@ -1,4 +1,4 @@
-package com.keengine.http.Simple;
+package com.keengine.http.simple;
 
 import com.keengine.http.HttpRequestInterface;
 import com.keengine.http.HttpParameters;
@@ -10,6 +10,12 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.InputStream;
 
+/**
+ * @author nuno
+ * /
+ * @project crawler
+ * @date 08-07-2019
+ **/
 public class SimpleHttpGet implements HttpRequestInterface,StreamReader {
 
 
