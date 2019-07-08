@@ -1,4 +1,4 @@
-package com.keengine.pattern.matcher;
+package com.keengine.pattern;
 
 import com.keengine.framework.dto.DTO;
 import com.keengine.framework.dto.DTOable;

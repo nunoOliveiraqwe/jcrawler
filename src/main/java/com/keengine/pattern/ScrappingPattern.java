@@ -1,21 +1,18 @@
-package com.keengine.pattern.scrapping;
-
-import com.keengine.pattern.matcher.Match;
-import com.keengine.pattern.matcher.MatchingGroupImpl;
+package com.keengine.pattern;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ScrappingPattern implements ScrappingInterface {
+class ScrappingPattern implements ScrappingInterface {
 
     private String name;
     private Pattern regex;
-    private MatchingGroupImpl matchingGroup;
+    private MatchingGroup matchingGroup;
 
 
-    public ScrappingPattern(String name, Pattern regex, MatchingGroupImpl matchingGroup){
+    protected ScrappingPattern(String name, Pattern regex, MatchingGroup matchingGroup){
         this.name = name;
         this.regex = regex;
         this.matchingGroup = matchingGroup;
