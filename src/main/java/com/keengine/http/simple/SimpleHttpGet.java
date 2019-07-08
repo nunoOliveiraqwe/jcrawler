@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.InputStream;
+import java.util.logging.Level;
 
 /**
  * @author nuno
@@ -26,7 +27,7 @@ public class SimpleHttpGet implements HttpRequestInterface,StreamReader {
         request.addHeader("User-Agent",parameters.getUserAgent());
         HttpResponse response = client.execute(request);
 
-        System.out.println("Response Code : "+ response.getStatusLine().getStatusCode());
+        LOGGER.info("Response Code : "+ response.getStatusLine().getStatusCode());
 
         InputStream stream =  response.getEntity().getContent();
         return this.readStream(stream);

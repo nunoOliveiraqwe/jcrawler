@@ -1,12 +1,11 @@
 package com.keengine.http.properties;
 
+import org.apache.log4j.Logger;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * @author nuno
  * /
@@ -15,6 +14,8 @@ import java.util.logging.Logger;
  **/
 public class HttpProperties {
 
+
+    private static final Logger LOGGER = Logger.getLogger(HttpProperties.class.getSimpleName());
 
     private final Properties applicationProperties = new Properties();
     private static final String PROPERTIES_RESOURCE = "http.properties";
@@ -36,13 +37,13 @@ public class HttpProperties {
                         "property file '" + PROPERTIES_RESOURCE + "' not found in the classpath");
             }
         } catch (final IOException exio) {
-            Logger.getLogger(HttpProperties.class.getName()).log(Level.SEVERE, exio.getMessage(), exio);
+            LOGGER.warn(exio.getMessage(), exio);
         } finally {
             if (propertiesStream != null) {
                 try {
                     propertiesStream.close();
                 } catch (final IOException ex) {
-                    Logger.getLogger(HttpProperties.class.getName()).log(Level.SEVERE, null, ex);
+                    LOGGER.warn(ex.getMessage(), ex);
                 }
             }
         }

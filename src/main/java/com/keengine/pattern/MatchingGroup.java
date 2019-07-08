@@ -1,6 +1,7 @@
 package com.keengine.pattern;
 
 
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -14,6 +15,9 @@ import java.util.regex.Matcher;
  **/
 class MatchingGroup {
 
+
+    private static final Logger LOGGER = Logger.getLogger(MatchingGroup.class.getSimpleName());
+
     private MatchingGroup next;
     private int groupIndex;
 
@@ -25,9 +29,14 @@ class MatchingGroup {
 
     public void match(ScrappingInterface scrapper, Matcher matcher, List<Match> matchList) {
         if (this.groupIndex >= 0 && this.groupIndex < matcher.end()) {
-            String match = matcher.group(this.groupIndex);
-            if (!match.trim().isEmpty())
-                matchList.add(new Match(match, this.groupIndex, scrapper.getName()));
+            try{
+                String match = matcher.group(this.groupIndex);
+                if (!match.trim().isEmpty())
+                    matchList.add(new Match(match, this.groupIndex, scrapper.getName()));
+            }
+            catch (Exception ex){
+                LOGGER.error( "Error matching group\n"+ex.getMessage(), ex);
+            }
         }
         if (this.next != null)
             this.next.match(scrapper, matcher, matchList);

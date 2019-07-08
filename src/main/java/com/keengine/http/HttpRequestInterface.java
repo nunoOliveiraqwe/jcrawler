@@ -1,6 +1,7 @@
 package com.keengine.http;
 
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
 
 /**
  * @author nuno
@@ -11,7 +12,7 @@ import java.util.logging.Logger;
 public interface HttpRequestInterface {
 
 
-    Logger LOGGER = Logger.getLogger("HttpRequestInterface");
+    Logger LOGGER = Logger.getLogger(HttpRequestInterface.class.getSimpleName());
 
     byte[] getUrl(HttpParameters parameters) throws Exception;
 

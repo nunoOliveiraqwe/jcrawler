@@ -2,8 +2,13 @@ package com.keengine.http;
 
 import com.keengine.http.simple.SimpleHttpGet;
 import com.keengine.http.tor.TorHttpGet;
+import com.keengine.pattern.Match;
+import com.keengine.pattern.PatternEntity;
+import com.keengine.pattern.ScrappingPatterns;
 import org.junit.Assume;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -33,7 +38,7 @@ public class HttpRequestMakerTest {
 
                 @Override
                 public String getUserAgent() {
-                    return null;
+                    return "jCrawler";
                 }
             });
 
@@ -105,7 +110,7 @@ public class HttpRequestMakerTest {
 
                 @Override
                 public String getUserAgent() {
-                    return null;
+                    return "jCrawler";
                 }
             });
             assertTrue(arr.length>0);
@@ -115,4 +120,10 @@ public class HttpRequestMakerTest {
             fail(e.getMessage());
         }
     }
+
+
+
+
+
+
 }

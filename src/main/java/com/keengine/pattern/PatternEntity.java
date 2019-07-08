@@ -1,11 +1,10 @@
 package com.keengine.pattern;
 
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -64,7 +63,7 @@ public class PatternEntity {
             validatePatternEntity();
         }
         catch (IllegalArgumentException ex){
-            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+            LOGGER.error( ex.getMessage(), ex);
             throw ex;
         }
     }

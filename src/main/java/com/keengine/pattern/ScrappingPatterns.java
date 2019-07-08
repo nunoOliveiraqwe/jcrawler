@@ -1,11 +1,11 @@
 package com.keengine.pattern;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author nuno
@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * @project crawler
  * @date 08-07-2019
  **/
-final class ScrappingPatterns {
+public final class ScrappingPatterns {
 
 
     private static final Logger LOGGER = Logger.getLogger(ScrappingPatterns.class.getSimpleName());
@@ -52,7 +52,7 @@ final class ScrappingPatterns {
 
         public ScrappingPatterns build() throws IllegalStateException {
             if(patternEntities.size()==0){
-                LOGGER.log(Level.SEVERE,"build method called without any PatternEntities associated");
+                LOGGER.fatal("build method called without any PatternEntities associated");
                 throw new IllegalStateException("build called without any PattenEntity");
             }
             ScrappingPatterns patterns = new ScrappingPatterns();

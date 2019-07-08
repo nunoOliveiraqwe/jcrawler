@@ -14,13 +14,14 @@ import java.util.logging.Logger;
 public class HttpRequestMaker {
 
 
+    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.Logger.getLogger(HttpRequestInterface.class.getSimpleName());
 
     public static HttpRequestInterface GetInterface(){
         final String factoryClassName = HttpProperties.instance().getRepositoryFactory();
         try {
             return (HttpRequestInterface) Class.forName(factoryClassName).newInstance();
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex) {
-            Logger.getLogger(HttpRequestInterface.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error(ex);
             return null;
         }
     }
