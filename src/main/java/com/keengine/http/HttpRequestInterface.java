@@ -12,6 +12,15 @@ import org.apache.log4j.Logger;
 public interface HttpRequestInterface {
 
 
+    enum HTTPINTERFACES {
+        SIMPLE,
+        TOR,
+        HTML_UNIT,
+        HTML_UNIT_PROXY
+    }
+
+
+
     Logger LOGGER = Logger.getLogger(HttpRequestInterface.class.getSimpleName());
 
     byte[] getUrl(HttpParameters parameters) throws Exception;

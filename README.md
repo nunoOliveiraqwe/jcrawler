@@ -6,13 +6,14 @@ jCrawler is a web spider built in java. It is made to allow an high degree of
 ## Functionalities
  +  User supplied regex's and groups
  +  Ability to use Tor network service
+ +  Four interfaces to make http requests
  
  
  ## TODO
  +  Add Support for Json and CSV as input for regex's and website's lists
  +  Add Support for Json, CSV and XML export formats
- +  Add Support for Robots.txt parsing
- +  When crawl-delay is not set add a increasing back-off strategy
+ +  Add Support for Robots.txt parsing - currently porting google's robots.txt to java
+ +  When crawl-delay is not set, add a increasing back-off strategy
  +  Add app commands
  +  Don't allow for groups in ungrouped regex
 
