@@ -16,8 +16,7 @@ public class HttpRequestFactoryTest {
 
     @Test
     public void getInterface() throws Exception {
-        final HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
-        HttpRequestInterface anInterface = httpRequestFactory.getInterface(HttpRequestInterface.HTTPINTERFACES.SIMPLE);
+        HttpRequestInterface anInterface = HttpRequestFactory.getInterface(AvailableInterfaces.SIMPLE());
         assertNotNull(anInterface);
         String url = "https://www.google.pt/";
         byte[] arr = anInterface.getUrl(new HttpParameters() {
